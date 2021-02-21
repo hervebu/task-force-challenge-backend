@@ -1,0 +1,14 @@
+version: "3.9"
+services: 
+  web:
+    build: .
+    ports:
+     ["80:3000"]
+    volumes: 
+      - .:/src
+    environment:
+      -NODE_ENV: development 
+  hervebu:
+    image: "hervebu"
+    ports:
+      ["27017:27017"]
