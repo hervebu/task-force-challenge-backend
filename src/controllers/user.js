@@ -1,6 +1,6 @@
-import User from '../services/user'
-import tokenUtil from '../jwt.util'
-import bcrypt from 'bcrypt'
+import User from '../services/user.js';
+import tokenUtil from '../jwt.util.js'
+import bcrypt from 'bcrypt';
 
 const { createUser, userAuth } = User
 const { generateToken } = tokenUtil
@@ -20,7 +20,7 @@ const addUser = async (req, res) => {
             'message': `User with email ${req.body.email} already exists`
         }) 
     } else {
-        const userToken = generateToken(newUser)
+        const userToken = generateToken(newUser.id, newUser.email)
         return res.status(201).json({
             'message': `User with email ${newUser.email} was successfully signedup`,
             'token': userToken

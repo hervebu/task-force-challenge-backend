@@ -1,4 +1,4 @@
-import User from '../database/dBmodels/user.model'
+import User from '../database/models/user.model.js';
 import bcrypt from 'bcrypt'
 
 const createUser = async (user) => {
